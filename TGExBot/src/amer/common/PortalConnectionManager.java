@@ -50,6 +50,15 @@ public class PortalConnectionManager {
         }
 //        LOGGER.debug("Leaving init() method");
     }
+    
+    public static void changeCmPtr(String newCM){
+      String old = (String)configProp.setProperty("infranet.connection", newCM);
+      
+      System.out.println("Switch CM ptr");
+      System.out.println("From: " + old);
+      System.out.println("To: " + newCM);
+      
+    }
 
     //private PortalContext ctx = null;
     public PortalContext getConnection() throws Exception {
